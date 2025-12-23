@@ -1,0 +1,723 @@
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+
+
+.subheader{
+          
+    color: #e3e5f1;
+    background-color: #f45607;
+    display: flex;
+    height:50px;
+    gap:10px;
+    align-items: center;
+}
+
+.contact,.phone{
+
+    padding-left: 20px;
+}
+header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+        background-color: #f7f3f1;
+        color: rgb(6, 6, 6);
+        height: 60px;
+        
+    }
+
+    nav ul {
+        list-style: none;
+        display: flex;
+        gap: 20px; 
+    }
+
+    nav a {
+        color: rgb(14, 13, 13);
+        text-decoration: none;
+        font-size: 20px;
+    }
+    nav ul li a:hover {
+    color: #00060a; 
+}
+
+.slider-container {
+    width: 100%;
+    height: 650px;
+    position: relative;
+    overflow: hidden;
+}
+
+.slide {
+    display: none;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    padding: 16px;
+    background: #f45607;
+    color: white;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+    z-index: 10;
+    
+}
+
+.prev { left: 0; }
+.next { right: 0; }
+
+
+
+
+
+.grid-container {
+    display: grid;
+    grid-template-areas: "stack";
+    position: relative;
+    height: 800px; 
+}
+.grid-container > * {
+    
+    grid-area: stack;
+    
+    align-self: left;
+    justify-self: left;
+
+ 
+    margin-bottom: 10px;
+
+}
+
+.grid-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+.grid-content {
+    grid-area: stack;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 20px;
+    text-align: left;
+    z-index: 5;          
+    pointer-events: none; 
+    width: 100%;
+    height: 100%;        
+}
+
+    
+
+
+.Donate, .Read, .prev, .next {
+    pointer-events: auto;
+    z-index: 10;          
+}
+
+
+
+.Donate,.Read{
+
+    
+    color: white;
+    top: 50%;
+    padding: 20px;
+    border-radius: 20px;
+    gap: 30px;
+   
+
+}
+
+.Donate{
+    background: #f45607;
+     padding-left: 30px;
+     text-align: center;
+     margin-left: 80px;
+}
+
+.Read{
+    background: transparent;
+    border-color: #f45607;
+    margin-left: 50px;
+    gap: 30px;
+}
+
+.nav-title{
+    padding: 40px;
+    font-size: 30px;
+    margin-left: 50PX;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+}
+
+.home-title{
+    
+    font-size: 70px;
+    margin-left: 70PX;
+    margin-top: 110px;
+}
+
+
+p{
+    padding:20px;
+    margin-left: 50px;
+    margin-top: 50px;
+    font-size: 30px;
+
+}
+
+
+.grid-container img, .slide {
+    grid-area: stack;
+    width: 100%;
+    height: 800px; 
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+
+
+
+
+
+
+.icon-box-container {
+
+
+    display: flex;
+    flex-direction:row;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    padding: 30px;
+    margin-top: 40px;
+}
+
+.icon-box {
+    background: #fff;
+    padding: 30px 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    text-align: center;
+    width: 300px;
+    height: 400px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.icon-box:hover {
+    transform: translateY(-5px); 
+    background-color: #f45607; 
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+
+.icon-wrapper {
+    width: 100px;           /* Size of the circle */
+    height: 100px;
+    margin: 0 auto 20px auto;
+    border-radius: 50%;     /* Makes the container a circle */
+    overflow: hidden;       /* This crops the image into the circle shape */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 3px solid #f45607; /* Optional: adds an orange ring around your image */
+    background-color: #fff;    /* Ensures no transparency issues */
+    transition: all 0.3s ease;
+}
+
+.icon-wrapper img {
+    width: 100%;            /* Fills the circle */
+    height: 100%;           /* Fills the circle */
+    object-fit: cover;      /* Important: fills circle without stretching */
+    transition: transform 0.3s ease;
+}
+
+/* --- HOVER EFFECTS --- */
+
+.icon-box:hover {
+    background-color: #f45607;
+    transform: translateY(-10px);
+}
+
+.icon-box:hover .icon-wrapper {
+    border-color: #fff;     /* Ring turns white on hover */
+    transform: scale(1.1);  /* Circle grows slightly on hover */
+}
+
+ 
+
+/* This targets ONLY the paragraphs inside your icon boxes */
+.icon-box p {
+    font-size: 16px;      /* Smaller font to fit the box */
+    margin-left: 0;       /* Removes the 50px gap so text can use full width */
+    padding: 0 15px;      /* Adds a little breathing room on the sides */
+    line-height: 1.6;     /* Makes the text easier to read */
+    color: #666;
+}
+
+/* Ensure the title also fits nicely */
+.icon-box h3 {
+    font-size: 22px;
+    margin-top: 15px;
+    margin-left: 0;       /* Ensures title is centered */
+    color: #333;
+}
+
+/* On hover, make sure the text turns white clearly */
+.icon-box:hover p, 
+.icon-box:hover h3 {
+    color: #fff !important;
+}
+
+
+
+
+.welcome{
+    display:flex;
+    justify-content: center;
+    background-color: #333;
+    margin-top: 50px;
+    height: 450px;
+
+}
+
+.intro{
+    margin-left: 90px;
+    margin-top: 40px;
+
+    color: #f45607;
+    font-size: 35px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.introtext{
+    font-size: 20px;
+}
+
+.welcomebutton{
+     color: #e3e5f1;
+     background: #f45607;
+     text-align: center;
+     margin-left: 80px;
+     border-radius: 20px;
+     font-size: 20px;
+     height: 40px;
+     width: 150px;
+     margin-left: 160px;
+
+}
+.wleft{
+    flex:1;
+    color: #e3e5f1;
+
+}
+
+.wright{
+    flex:1;
+    margin-top: 70px;
+    margin-left:250px;
+}
+
+
+.aboutlines{
+
+    display:flex;
+    justify-content: center;
+    background-color: #f9f7f7;
+    margin-top: 50px;
+    height: 600px;
+
+}
+
+.aleft{
+    flex:1;
+    width: 40%;
+
+}
+
+.aboutline{
+    color: #00060a;
+    font-size: 50px;
+    margin-left: 30px;
+}
+
+.abouttext{
+    color:#f45607;
+    font-size: 20px;
+    margin-left: 30px;
+    margin-top: 10px;
+
+}
+
+.aright{
+    display: flex;
+    gap:70px;
+    margin-top: 150px; 
+    margin-right: 100px;
+    padding: 50px;
+
+}
+
+.firstimg,.secondimg,.thirdimg{
+    padding-bottom: 25px;
+    align-items: center;
+}
+
+.no{
+    font-size: 40px;
+}
+
+/* ==============================
+   FOOTER CONTAINER (DARK + EXTRA COMPACT BOTTOM)
+   ============================== */
+
+.footerclass {
+    height: auto;
+    min-height: 200px;                         /* reduced more */
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 22px 50px 8px;                    /* bottom reduced more */
+    background:
+        linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)),
+        url('footerimg.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* ==============================
+   COMMON COLUMN
+   ============================== */
+
+.footer-column {
+    flex: 0 0 25%;
+    max-width: 25%;
+}
+
+/* ==============================
+   TITLES
+   ============================== */
+
+.footertitle {
+    font-size: 24px;
+    color: #e3e5f1;
+    margin: 0 0 6px 0;                         /* reduced bottom gap */
+    font-weight: bold;
+}
+
+/* ==============================
+   1. THE CHARITY
+   ============================== */
+
+.thecharity {
+    padding-left: 30px;
+}
+
+.footercharity {
+    font-size: 16px;
+    color: #e3e5f1;
+    line-height: 1.45;
+    margin-bottom: 6px;                        /* reduced */
+}
+
+/* ==============================
+   2. USEFUL LINKS
+   ============================== */
+
+.useful-links {
+    max-width: 220px;
+}
+
+.footerlinks {
+    color: white;
+    font-size: 16px;
+    line-height: 1.6;
+    white-space: pre-line;
+    margin-bottom: 6px;                        /* reduced */
+}
+
+/* ==============================
+   3. LATEST NEWS
+   ============================== */
+
+.latest-news {
+    max-width: 210px;
+}
+
+.footer-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-list li {
+    margin-bottom: 6px;                        /* reduced */
+}
+
+.footernews {
+    color: #e3e5f1;
+    font-size: 16px;
+    margin: 0;
+}
+
+.datenews {
+    font-size: 12px;
+    color: #f45607;
+    margin: 0;
+}
+
+/* ==============================
+   4. CONTACTS
+   ============================== */
+
+.contacts {
+    max-width: 230px;
+}
+
+.footercontacts {
+    list-style-type: disc;
+    color: #e3e5f1;
+    font-size: 14px;
+    padding-left: 16px;
+}
+
+.footercontacts li {
+    margin-bottom: 10px;                       /* reduced */
+}
+
+.footercontacts li::marker {
+    color: #f45607;
+}
+
+/* ==============================
+   SUBSCRIBE INPUT
+   ============================== */
+
+.footer-subscribe {
+    display: flex;
+    width: 210px;
+    height: 30px;                              /* reduced */
+    margin-top: 6px;
+}
+
+.email-input {
+    background-color: #fbfafa;
+    border: 1px solid #555;
+    color: #000;
+    padding: 0 6px;
+    width: 70%;
+    font-size: 12px;
+    border-radius: 4px 0 0 4px;
+}
+
+.send-btn {
+    background-color: #f45607;
+    color: white;
+    border: none;
+    width: 30%;
+    font-size: 12px;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 0 4px 4px 0;
+}
+
+.send-btn:hover {
+    background-color: #d44a06;
+}
+
+
+
+
+
+
+
+/* ============================
+   RESPONSIVE MEDIA QUERIES
+   ============================ */
+
+/* ---------- TABLETS ---------- */
+@media (max-width: 992px) {
+
+    .slider-container,
+    .grid-container,
+    .grid-container img,
+    .slide {
+        height: auto;
+        min-height: 400px;
+    }
+
+    .home-title {
+        font-size: 48px;
+    }
+
+    p {
+        font-size: 22px;
+    }
+
+    .aboutlines,
+    .welcome {
+        height: auto;
+        padding: 30px;
+    }
+
+    .wright {
+        margin-left: 0;
+    }
+}
+
+/* ---------- MOBILE DEVICES ---------- */
+@media (max-width: 768px) {
+
+    /* Header & Navigation */
+    header {
+        flex-direction: column;
+        height: auto;
+        text-align: center;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+        padding: 10px 0;
+    }
+
+    .nav-title {
+        margin-left: 0;
+        padding: 10px;
+    }
+
+    /* Subheader */
+    .subheader {
+        flex-direction: column;
+        height: auto;
+        padding: 10px;
+        text-align: center;
+    }
+
+    /* Slider & Hero */
+    .home-title {
+        font-size: 34px;
+        margin-left: 0;
+        margin-top: 40px;
+        text-align: center;
+    }
+
+    p {
+        font-size: 16px;
+        margin-left: 0;
+        margin-top: 20px;
+        padding: 10px;
+        text-align: center;
+    }
+
+    .Donate,
+    .Read {
+        margin-left: 0;
+        display: inline-block;
+        margin-top: 10px;
+    }
+
+    /* Welcome Section */
+    .welcome {
+        flex-direction: column;
+        height: auto;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .intro {
+        margin-left: 0;
+        font-size: 26px;
+    }
+
+    .welcomebutton {
+        margin: 20px auto;
+    }
+
+    .wright {
+        margin: 20px auto;
+    }
+
+    /* About Section */
+    .aboutlines {
+        flex-direction: column;
+        height: auto;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .aleft {
+        width: 100%;
+    }
+
+    .aright {
+        flex-direction: column;
+        gap: 30px;
+        margin: 0;
+        padding: 20px;
+    }
+
+    /* Icon Boxes */
+    .icon-box-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* Footer */
+    .footerclass {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .thecharity,
+    .useful.links,
+    .latest-news,
+    .contacts {
+        width: 100%;
+        margin: 20px 0;
+        padding: 0;
+    }
+
+    .footer-subscribe {
+        margin: 10px auto;
+    }
+}
+
+/* ---------- SMALL MOBILE ---------- */
+@media (max-width: 480px) {
+
+    .home-title {
+        font-size: 28px;
+    }
+
+    .intro {
+        font-size: 22px;
+    }
+
+    .footertitle {
+        font-size: 24px;
+    }
+
+    .footercharity,
+    .footerlinks,
+    .footernews {
+        font-size: 14px;
+    }
+}
+
+
+

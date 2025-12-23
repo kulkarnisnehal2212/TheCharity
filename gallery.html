@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+
+    <link rel="stylesheet" href="MainPage.css">
+
+    <!-- Gallery specific CSS -->
+    <link rel="stylesheet" href="gallery.css">
+</head>
+<body>
+
+
+<div class="subheader">
+
+<div class="contact">
+    MAIL:conatact@mailcharity.com
+</div>
+
+<div class="phone" >
+     PHONE: +24 3772 120 091 / +56452 4567
+</div>
+   
+  
+</div>
+<!-- HEADER (reuse same header from main page) -->
+<header>
+    <h1 class="nav-title">The Charity</h1>
+    <nav>
+        <ul>
+            <li><a href="MainPage.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="news.html">News</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+
+
+
+
+
+<!-- PAGE BANNER -->
+<div class="pageimg">
+    <div class="pageimg-content">
+        <p>GALLERY</p>
+        <hr class="title-hr">
+    </div>
+</div>
+
+<!-- GALLERY CONTENT -->
+<section class="gallery-section">
+
+    <div class="gallery-card">
+        <img src="gallery1.png" alt="Water for Children">
+        <h3>Water for Children AID</h3>
+        <span>2018 Causes</span>
+    </div>
+
+    <div class="gallery-card">
+        <img src="gallery2.png" alt="Toys for Children">
+        <h3>Toys for Children Campaign</h3>
+        <span>2019 Causes</span>
+    </div>
+
+    <div class="gallery-card">
+        <img src="gallery3.png" alt="Children Campaign">
+        <h3>Healthy Meals for Growing Minds</h3>
+        <span>2020 Causes</span>
+    </div>
+
+
+    <div class="gallery-card">
+        <img src="gallery4.png" alt="Children Campaign">
+        <h3>Shelter & Care for Orphaned Children</h3>
+        <span>2020 Causes</span>
+    </div>
+
+    <div class="gallery-card">
+        <img src="gallery5.png" alt="Children Campaign">
+        <h3>Clean Water for Children Mission</h3>
+        <span>2012 Causes</span>
+    </div>
+
+    <div class="gallery-card">
+        <img src="gallery6.png" alt="Children Campaign">
+        <h3>Support Children Life Campaign</h3>
+        <span>2018 Causes</span>
+    </div>
+
+    <div class="gallery-card">
+        <img src="gallery7.png" alt="Children Campaign">
+        <h3>Support Children Life Campaign</h3>
+        <span>2018 Causes</span>
+    </div>
+
+    <div class="gallery-card">
+        <img src="gallery8.jpeg" alt="Children Campaign">
+        <h3>Support Children Life Campaign</h3>
+        <span>2018 Causes</span>
+    </div>
+
+    <div class="gallery-card">
+        <img src="gallery9.png" alt="Children Campaign">
+        <h3>Support Children Life Campaign</h3>
+        <span>2018 Causes</span>
+    </div>
+</section>
+
+<button id="loadMoreBtn" class="load">Load more </button> 
+
+<!-- FOOTER (reuse same footer) -->
+<footer>
+
+
+    <div class="footerclass">
+
+<div class="thecharity">
+    <p class="footertitle">The Charity</p>
+    <p class="footercharity">"Hope begins with a gift, and every action creates a lasting impact. Our mission starts within the community. We are dedicated to building a brighter future for those in need through your generous support. Every small act of kindness counts."</p>
+
+</div>
+
+
+<div class="useful links">
+    <p class="footertitle">Useful Links</p>
+    <p class="footerlinks">
+        <span>Privacy Policy</span><br>
+        <span>Become a Volunteer</span><br>
+        <span>Donate</span><br>
+        <span>Testimonials</span><br>
+        <span>Causes</span><br>
+        <span>Portfolio</span><br>
+        <span>News</span>
+    </p>
+</div>
+
+
+<div class="latest-news">
+    <p class="footertitle">Latest News</p>
+    
+    <ul class="footer-list">
+        <li>
+            <p class="footernews">A new cause to help</p>
+            <p class="datenews">March 12, 2018</p>
+        </li>
+        <li>
+            <p class="footernews">We love to help people</p>
+            <p class="datenews">March 12, 2018</p>
+        </li>
+        <li>
+            <p class="footernews">The new ideas for helping</p>
+            <p class="datenews">March 12, 2018</p>
+        </li>
+    </ul>
+</div>+
+
+
+<div class="contacts">
+    <p class="footertitle">Contact</p>
+    <ul class="footercontacts">
+        <li>+45 677 8993000 223</li>
+        <li>office@template.com</li>
+        <li>Main Str. no 45-46, b3, 56832, Los Angeles, CA</li>
+    </ul>
+
+    <div class="footer-subscribe">
+        <input type="email" placeholder="Your Email" class="email-input">
+        <button type="submit" class="send-btn">Send</button>
+    </div>
+</div>
+
+    </div>
+
+    </footer>
+
+
+<script>
+    const cards = document.querySelectorAll(".gallery-card");
+    const loadMoreBtn = document.getElementById("loadMoreBtn");
+
+    let visibleCount = 3;
+
+    // Show first 3 on page load
+    for (let i = 0; i < visibleCount; i++) {
+        if (cards[i]) {
+            cards[i].style.display = "block";
+        }
+    }
+
+    loadMoreBtn.addEventListener("click", () => {
+
+        for (let i = visibleCount; i < visibleCount + 3; i++) {
+            if (cards[i]) {
+                cards[i].style.display = "block";
+            }
+        }
+
+        visibleCount += 3;
+
+        // Hide button if all items are shown
+        if (visibleCount >= cards.length) {
+            loadMoreBtn.style.display = "none";
+        }
+    });
+</script>
+</body>
+
+
+
+</html>

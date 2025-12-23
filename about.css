@@ -1,0 +1,246 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+body, html {
+    margin: 0;
+}
+
+.pageimg {
+    width: 100%;
+    height: 180px;                /* short height */
+    background: 
+        linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+        url("about1.png");        /* your image */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pageimg-content {
+    text-align: center;
+}
+
+.pageimg-content p {
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    margin: 0;
+}
+
+.title-hr {
+    width: 50px;
+    height: 4px;
+    background-color: #f45607;
+    border: none;
+    margin: 6px auto 0;
+}
+
+
+
+.welcome{
+    display:flex;
+    justify-content: center;
+    background-color: #333;
+    margin-top: 50px;
+    height: 450px;
+
+}
+
+.intro{
+    margin-left: 90px;
+    margin-top: 40px;
+
+    color: #f45607;
+    font-size: 35px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.introtext{
+    font-size: 20px;
+}
+
+.welcomebutton{
+     color: #e3e5f1;
+     background: #f45607;
+     text-align: center;
+     margin-left: 80px;
+     border-radius: 20px;
+     font-size: 20px;
+     height: 40px;
+     width: 150px;
+     margin-left: 160px;
+
+}
+.wleft{
+    flex:1;
+    color: #e3e5f1;
+
+}
+
+.wright{
+    flex:1;
+    margin-top: 70px;
+    margin-left:250px;
+}
+
+
+.aboutlines{
+
+    display:flex;
+    justify-content: center;
+    background-color: #f9f7f7;
+    margin-top: 50px;
+    height: 600px;
+
+}
+
+.aleft{
+    flex:1;
+    width: 40%;
+
+}
+
+.aboutline{
+    color: #00060a;
+    font-size: 50px;
+    margin-left: 30px;
+}
+
+.abouttext{
+    color:#f45607;
+    font-size: 20px;
+    margin-left: 30px;
+    margin-top: 10px;
+
+}
+
+.aright{
+    display: flex;
+    gap:70px;
+    margin-top: 150px; 
+    margin-right: 100px;
+    padding: 50px;
+
+}
+
+.firstimg,.secondimg,.thirdimg{
+    padding-bottom: 25px;
+    align-items: center;
+}
+
+.no{
+    font-size: 40px;
+}
+
+
+
+
+@media (max-width: 768px) {
+
+    .welcome,
+    .aboutlines {
+        flex-direction: column;
+        height: auto;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .intro {
+        margin-left: 0;
+    }
+
+    .wright {
+        margin: 20px auto;
+    }
+
+    .aright {
+        flex-direction: column;
+        gap: 30px;
+        margin: 0;
+        padding: 20px;
+    }
+}
+
+
+/* ================================
+   EXTRA RESPONSIVE FIXES (SAFE)
+   ================================ */
+
+@media (max-width: 768px) {
+
+    /* Page banner */
+    .pageimg {
+        height: 140px;
+    }
+
+    .pageimg-content p {
+        font-size: 26px;
+        letter-spacing: 2px;
+    }
+
+    /* Remove large left spacing */
+    .intro,
+    .aboutline,
+    .abouttext {
+        margin-left: 0;
+    }
+
+    /* Button center */
+    .welcomebutton {
+        margin: 20px auto;
+        display: block;
+    }
+
+    /* Right section spacing fix */
+    .wright {
+        margin-left: 0;
+    }
+
+    /* About title resize */
+    .aboutline {
+        font-size: 32px;
+    }
+
+    .abouttext {
+        font-size: 16px;
+    }
+
+    .introtext {
+        font-size: 16px;
+    }
+
+    .no {
+        font-size: 30px;
+    }
+}
+
+/* ---------- SMALL MOBILE ---------- */
+@media (max-width: 480px) {
+
+    .pageimg {
+        height: 120px;
+    }
+
+    .pageimg-content p {
+        font-size: 22px;
+    }
+
+    .aboutline {
+        font-size: 26px;
+    }
+
+    .intro {
+        font-size: 24px;
+    }
+}
