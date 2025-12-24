@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact-PAGE</title>
 
-     <link rel="stylesheet" href="style.css">
-
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="contact.css">
 </head>
 
@@ -28,7 +28,10 @@
 
 
 <header>
-    <h1 class="nav-title">The Charity</h1>
+    <div class="header-branding">
+        <i class="fa-solid fa-hand-holding-heart header-icon"></i>
+        <span class="header-text"><span class="header-the">The</span> <span class="header-charity">Charity</span></span>
+    </div>
     <nav>
         <ul> 
             <li><a href="index.html">Home</a></li>
@@ -38,7 +41,6 @@
             <li><a href="contact.html">Contact</a></li>
         </ul>  
     </nav>
-
 </header>    
 
 
@@ -52,7 +54,7 @@
 
 <div class="pageimg">
     <div class="pageimg-content">
-        <p> Contact</p>
+        <p>CONTACT</p>
         <hr class="title-hr">
     </div>
 </div>
@@ -120,69 +122,82 @@
 
 
 <footer>
-
-
     <div class="footerclass">
+        <!-- Column 1: Brand/About -->
+        <div class="footer-column">
+            <div class="brand-line">
+                <span class="logo-icon"><i class="fa-solid fa-hand-holding-heart"></i></span>
+                <span class="brand-text"><span class="the-text">The</span> <span class="charity-text">Charity</span></span>
+            </div>
+            <p class="brand-paragraph">Hope begins with a gift, and every action creates a lasting impact. Our mission starts within the community. We are dedicated to building a brighter future for those in need.</p>
+            <div class="social-icons">
+                <span class="social-icon"><i class="fab fa-facebook-f"></i></span>
+                <span class="social-icon"><i class="fab fa-twitter"></i></span>
+                <span class="social-icon"><i class="fab fa-instagram"></i></span>
+                <span class="social-icon"><i class="fab fa-linkedin-in"></i></span>
+                <span class="social-icon"><i class="fab fa-youtube"></i></span>
+            </div>
+        </div>
 
-<div class="thecharity">
-    <p class="footertitle">The Charity</p>
-    <p class="footercharity">"Hope begins with a gift, and every action creates a lasting impact. Our mission starts within the community. We are dedicated to building a brighter future for those in need through your generous support. Every small act of kindness counts."</p>
+        <!-- Column 2: Useful Links -->
+        <div class="footer-column">
+            <h3 class="footer-heading">Useful Links</h3>
+            <ul class="links-list">
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Become a Volunteer</a></li>
+                <li><a href="#">Donate</a></li>
+                <li><a href="#">Testimonials</a></li>
+                <li><a href="#">Causes</a></li>
+                <li><a href="#">Portfolio</a></li>
+                <li><a href="#">News</a></li>
+            </ul>
+        </div>
 
-</div>
+        <!-- Column 3: Latest News -->
+        <div class="footer-column">
+            <h3 class="footer-heading">Latest News</h3>
+            <div class="news-container">
+                <div class="news-item">
+                    <p class="news-title">A new cause to help</p>
+                    <p class="news-date">March 12, 2018</p>
+                </div>
+                <div class="news-item">
+                    <p class="news-title">We love to help people</p>
+                    <p class="news-date">March 12, 2018</p>
+                </div>
+                <div class="news-item">
+                    <p class="news-title">The new ideas for helping</p>
+                    <p class="news-date">March 12, 2018</p>
+                </div>
+                <div class="news-item">
+                    <p class="news-title">Community support grows</p>
+                    <p class="news-date">March 10, 2018</p>
+                </div>
+            </div>
+        </div>
 
-
-<div class="useful links">
-    <p class="footertitle">Useful Links</p>
-    <p class="footerlinks">
-        <span>Privacy Policy</span><br>
-        <span>Become a Volunteer</span><br>
-        <span>Donate</span><br>
-        <span>Testimonials</span><br>
-        <span>Causes</span><br>
-        <span>Portfolio</span><br>
-        <span>News</span>
-    </p>
-</div>
-
-
-
-<div class="latest-news">
-    <p class="footertitle">Latest News</p>
-    
-    <ul class="footer-list">
-        <li>
-            <p class="footernews">A new cause to help</p>
-            <p class="datenews">March 12, 2018</p>
-        </li>
-        <li>
-            <p class="footernews">We love to help people</p>
-            <p class="datenews">March 12, 2018</p>
-        </li>
-        <li>
-            <p class="footernews">The new ideas for helping</p>
-            <p class="datenews">March 12, 2018</p>
-        </li>
-    </ul>
-</div>
-
-
-<div class="contacts">
-    <p class="footertitle">Contact</p>
-    <ul class="footercontacts">
-        <li>+45 677 8993000 223</li>
-        <li>office@template.com</li>
-        <li>Main Str. no 45-46, b3, 56832, Los Angeles, CA</li>
-    </ul>
-
-    <div class="footer-subscribe">
-        <input type="email" placeholder="Your Email" class="email-input">
-        <button type="submit" class="send-btn">Send</button>
+        <!-- Column 4: Contact -->
+        <div class="footer-column">
+            <h3 class="footer-heading">Contact</h3>
+            <div class="contact-item">
+                <span class="contact-icon"><i class="fas fa-phone-alt"></i></span>
+                <span class="contact-text">+45 677 8993000 223</span>
+            </div>
+            <div class="contact-item">
+                <span class="contact-icon"><i class="fas fa-envelope"></i></span>
+                <span class="contact-text">office@template.com</span>
+            </div>
+            <div class="contact-item">
+                <span class="contact-icon"><i class="fas fa-map-marker-alt"></i></span>
+                <span class="contact-text">Main Str. no 45-46, b3, 56832, Los Angeles, CA</span>
+            </div>
+            <div class="subscription-form">
+                <input type="email" placeholder="Your email" class="email-input">
+                <button type="submit" class="send-button">SEND</button>
+            </div>
+        </div>
     </div>
-</div>
-
-    </div>
-
-    </footer>
+</footer>
 
 
 </main>
