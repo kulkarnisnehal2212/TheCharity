@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Donate | The Charity</title>
+  <link rel="stylesheet" href="Donation.css" />
+  <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<div class="subheader">
+</head>
+<body> 
+
+  <div class="contact">MAIL: conatact@mailcharity.com</div>
+  <div class="phone">PHONE: +24 3772 120 091 / +56452 4567</div>
+</div>
+
+<header>
+  <div class="header-branding">
+    <i class="fa-solid fa-hand-holding-heart header-icon"></i>
+    <span class="header-text">
+      <span class="header-the">The</span>
+      <span class="header-charity">Charity</span>
+    </span>
+  </div>
+
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="news.html">News</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+
+  <div class="donate-container">
+    <div class="donate-header">
+      <h1>Be the Reason Someone Smiles Today</h1>
+      <p>Your small help can create a big impact 🤍 </p>
+    </div>
+
+    <div class="donate-body">
+      <h3>Select Donation Amount</h3>
+
+      <div class="amount-options">
+        <button class="amount-btn">₹1000</button>
+        <button class="amount-btn">₹2500</button>
+        <button class="amount-btn">₹5000</button>
+        <button class="amount-btn">₹10000</button>
+      </div>
+
+      <div class="custom-amount">
+        <input type="number" placeholder="Enter custom amount (₹)" />
+      </div>
+
+      <form class="donate-form" onsubmit="redirectHome(event)">
+        <input type="text" placeholder="Full Name" required />
+        <input type="email" placeholder="Email Address" required />
+        <input type="tel" placeholder="Phone Number" required />
+
+        <button class="donate-btn" type="submit">Donate Now</button>
+      </form>
+
+      <p class="note">🔒 100% Secure Donation • Your support truly matters</p>
+    </div>
+  </div>
+
+
+
+
+  <script>
+    const buttons = document.querySelectorAll('.amount-btn');
+    const customInput = document.querySelector('.custom-amount input');
+
+    buttons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        buttons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        customInput.value = btn.innerText.replace('₹', '');
+      });
+    });
+
+    function redirectHome(event) {
+      event.preventDefault();
+      alert("Thank you for your support 🖤\nEvery contribution brings a smile, a dream, and a better tomorrow.");
+      window.location.href = "index.html";
+    }
+
+
+    fetch("header.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("header").innerHTML = data;
+    });
+  </script>
+
+</body>
+</html>
