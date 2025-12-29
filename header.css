@@ -1,0 +1,17 @@
+header {
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    background-color: #f7f3f1;
+}
+
+/* Smooth hover underline */
+nav a::after {
+    transition: width 0.25s ease-in-out;
+}
+
+/* Prevent layout jump */
+header, .subheader {
+    width: 100%;
+    box-sizing: border-box;
+}
