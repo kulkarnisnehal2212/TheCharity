@@ -37,7 +37,7 @@
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About</a></li>           
             <li><a href="gallery.html">Gallery</a></li>
-            <li><a href="news.html">News</a></li>
+            <li><a href="news.html" class="active">News</a></li>
             <li><a href="contact.html">Contact</a></li>
         </ul>  
     </nav>
@@ -276,6 +276,25 @@
 </main>
 
 
+
+<script>
+// Progress bar animation when visible
+const progressBar = document.querySelector('.progress-bar');
+if (progressBar) {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animate');
+            }
+        });
+    }, { threshold: 0.5 });
+    
+    observer.observe(progressBar);
+}
+
+// Smooth scroll behavior
+document.documentElement.style.scrollBehavior = 'smooth';
+</script>
 
 </body>
 </html>

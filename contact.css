@@ -68,54 +68,130 @@ body, html {
     gap: 60px;
 }
 
-/* Left Side */
+/* Contact Info Animations */
 .contact-info {
     flex: 1;
+    opacity: 0;
+    transform: translateX(-50px);
+    animation: slideInLeft 0.8s ease forwards;
+    animation-delay: 0.2s;
 }
 
 .contact-info h2 {
     font-size: 32px;
     margin-bottom: 20px;
+    color: #333;
+    position: relative;
+}
+
+.contact-info h2::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, #f45607, #ff6b35);
+    border-radius: 2px;
 }
 
 .contact-info p {
     color: #777;
     line-height: 1.7;
     margin-bottom: 25px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.6s ease forwards;
+    animation-delay: 0.4s;
 }
 
-/* Social Icons */
+/* Animated Social Icons */
 .social-icons {
     margin-bottom: 30px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.6s ease forwards;
+    animation-delay: 0.6s;
 }
 
 .social-icons i {
-    color: #ff4a17;
+    color: #f45607;
     margin-right: 15px;
     font-size: 18px;
     cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 10px;
+    border-radius: 50%;
+    background: rgba(244, 86, 7, 0.1);
 }
 
-/* Contact Details */
+.social-icons i:hover {
+    background: #f45607;
+    color: white;
+    transform: translateY(-3px) scale(1.1);
+    box-shadow: 0 5px 15px rgba(244, 86, 7, 0.3);
+}
+
+/* Animated Contact Details */
 .contact-details {
     list-style: none;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.6s ease forwards;
+    animation-delay: 0.8s;
 }
 
 .contact-details li {
     margin-bottom: 15px;
     color: #666;
+    padding: 12px 0;
+    border-left: 3px solid transparent;
+    padding-left: 15px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.contact-details li:hover {
+    border-left-color: #f45607;
+    background: rgba(244, 86, 7, 0.05);
+    transform: translateX(5px);
 }
 
 .contact-details i {
-    color: #ff4a17;
+    color: #f45607;
     margin-right: 10px;
+    width: 20px;
+    text-align: center;
+    transition: transform 0.3s ease;
 }
 
-/* Right Side */
+.contact-details li:hover i {
+    transform: scale(1.2);
+}
+
+/* Animated Contact Form */
 .contact-form {
     flex: 1;
-    background: #f3f7f8;
+    background: #fff;
     padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    opacity: 0;
+    transform: translateX(50px);
+    animation: slideInRight 0.8s ease forwards;
+    animation-delay: 0.3s;
+    position: relative;
+    overflow: hidden;
+}
+
+.contact-form::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #f45607, #ff6b35);
 }
 
 .contact-form input,
@@ -123,28 +199,71 @@ body, html {
     width: 100%;
     padding: 15px;
     margin-bottom: 20px;
-    border: 1px solid #ddd;
+    border: 2px solid #eee;
+    border-radius: 8px;
     outline: none;
     font-size: 14px;
+    transition: all 0.3s ease;
+    background: #fafafa;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #f45607;
+    background: white;
+    box-shadow: 0 0 0 3px rgba(244, 86, 7, 0.1);
+    transform: translateY(-2px);
 }
 
 .contact-form textarea {
     resize: none;
+    min-height: 120px;
 }
 
-/* Button */
+/* Enhanced Submit Button */
 .contact-form button {
-    background: #ff4a17;
+    background: #f45607;
     color: #fff;
     border: none;
     padding: 15px 40px;
     border-radius: 30px;
     cursor: pointer;
     font-size: 15px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(244, 86, 7, 0.3);
+}
+
+.contact-form button::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255,255,255,0.2);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.5s ease;
+}
+
+.contact-form button:hover::before {
+    width: 300px;
+    height: 300px;
 }
 
 .contact-form button:hover {
-    background: #e53f10;
+    background: #d44a06;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(244, 86, 7, 0.4);
+}
+
+.contact-form button:active {
+    transform: translateY(-1px);
 }
 
 
@@ -152,18 +271,8 @@ body, html {
 
 
 
-.firstimg,.secondimg,.thirdimg{
-    padding-bottom: 25px;
-    align-items: center;
-}
-
-.no{
-    font-size: 40px;
-}
-
-
+/* Mobile Responsive Animations */
 @media (max-width: 768px) {
-
     .container {
         flex-direction: column;
     }
@@ -171,11 +280,93 @@ body, html {
     .contact-info,
     .contact-form {
         width: 100%;
+        animation: fadeInUp 0.6s ease forwards;
+        transform: none;
     }
 
     .contact-form {
         padding: 20px;
+        margin-top: 30px;
     }
+    
+    .contact-info h2 {
+        font-size: 28px;
+        text-align: center;
+    }
+    
+    .social-icons {
+        text-align: center;
+    }
+    
+    .contact-details li:hover {
+        transform: translateX(3px);
+    }
+    
+    .social-icons i:hover {
+        transform: translateY(-2px) scale(1.05);
+    }
+}
+
+
+/* Keyframe Animations */
+@keyframes slideInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+/* Form Validation Animations */
+.contact-form input.error,
+.contact-form textarea.error {
+    border-color: #e74c3c;
+    animation: shake 0.5s ease-in-out;
+}
+
+.contact-form input.success,
+.contact-form textarea.success {
+    border-color: #27ae60;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
 }
 
 

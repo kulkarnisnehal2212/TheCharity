@@ -38,7 +38,7 @@
             <li><a href="about.html">About</a></li>           
             <li><a href="gallery.html">Gallery</a></li>
             <li><a href="news.html">News</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="contact.html" class="active">Contact</a></li>
         </ul>  
     </nav>
 </header>    
@@ -203,6 +203,66 @@
 </main>
 
 
+
+<script>
+// Form validation and animations
+const form = document.querySelector('.contact-form form');
+const inputs = document.querySelectorAll('.contact-form input, .contact-form textarea');
+
+// Add focus animations
+inputs.forEach(input => {
+    input.addEventListener('focus', function() {
+        this.parentElement.style.transform = 'scale(1.02)';
+    });
+    
+    input.addEventListener('blur', function() {
+        this.parentElement.style.transform = 'scale(1)';
+        
+        // Simple validation
+        if (this.value.trim() === '') {
+            this.classList.add('error');
+            this.classList.remove('success');
+        } else {
+            this.classList.add('success');
+            this.classList.remove('error');
+        }
+    });
+});
+
+// Form submission with animation
+if (form) {
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const button = this.querySelector('button');
+        const originalText = button.textContent;
+        
+        // Button loading animation
+        button.textContent = 'Sending...';
+        button.style.background = '#95a5a6';
+        button.disabled = true;
+        
+        // Simulate form submission
+        setTimeout(() => {
+            button.textContent = 'Message Sent!';
+            button.style.background = '#27ae60';
+            
+            setTimeout(() => {
+                button.textContent = originalText;
+                button.style.background = '#f45607';
+                button.disabled = false;
+                form.reset();
+                inputs.forEach(input => {
+                    input.classList.remove('success', 'error');
+                });
+            }, 2000);
+        }, 1500);
+    });
+}
+
+// Smooth scroll behavior
+document.documentElement.style.scrollBehavior = 'smooth';
+</script>
 
 </body>
 </html>
