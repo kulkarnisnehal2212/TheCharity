@@ -45,33 +45,84 @@ header {
         margin-right: 100px;
     }
 
-    nav a {
-        color: rgb(14, 13, 13);
-        text-decoration: none;
-        font-size: 16px;
-        font-weight: 500;
-        position: relative;
-        transition: color 0.3s ease;
-    }
-    
-    nav a:hover {
-        color: #f45607;
-    }
-    
-    nav a::after {
-        content: '';
-        position: absolute;
-        bottom: -5px;
-        left: 0;
-        width: 0;
-        height: 2px;
-        background-color: #f45607;
-        transition: width 0.3s ease;
-    }
-    
-    nav a:hover::after {
-        width: 100%;
-    }
+
+ /*
+nav a {
+  color: #333;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+  position: relative;
+  transition: color 0.3s ease;
+  padding: 8px 0;
+}
+
+nav a:hover {
+  color: #f45607;
+}
+
+nav a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #f45607;
+  transition: width 0.3s ease;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+*/
+
+nav a {
+  color: #333;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+  position: relative;
+  transition: all 0.3s ease;
+  padding: 15px 0;
+}
+
+
+nav a.active {
+  color: #f45607;
+}
+
+nav a.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: #f45607;
+}
+
+/* Hover effect for other links */
+nav a:hover {
+  color: #f45607;
+}
+
+nav a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background-color: #f45607;
+  transition: width 0.3s ease;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
 
 .slider-container {
     width: 100%;
@@ -120,6 +171,8 @@ header {
     grid-template-areas: "stack";
     position: relative;
     height: 800px; 
+
+     
 }
 .grid-container > * {
     
@@ -149,14 +202,12 @@ header {
     z-index: 5;          
     pointer-events: none; 
     width: 100%;
-    height: 100%;  
-    
-    
-
-    
-    
-    
-    
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-top: 150px;
+    animation: slideInFromLeft 1.2s ease-out;
 }
 
     
@@ -169,31 +220,95 @@ header {
 
 
 
+.button-container {
+    display: flex;
+    gap: 20px;
+    margin-left: 80px;
+    margin-top: 30px;
+    align-items: center;
+}
+
 .Donate,.Read{
-
-    
     color: white;
-    top: 50%;
-    padding: 20px;
+    padding: 20px 30px;
     border-radius: 20px;
-    gap: 30px;
-   
-
+    transition: all 0.4s ease;
+    animation: fadeInUp 1.5s ease-out 0.9s both;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 16px;
+    border: 2px solid transparent;
+    display: inline-block;
+    margin: 0;
 }
 
 .Donate{
     background: #f45607;
-     padding-left: 30px;
-     text-align: center;
-     margin-left: 95px;
+    box-shadow: 0 6px 20px rgba(244, 86, 7, 0.4);
+    position: relative;
+    overflow: hidden;
+}
+
+.Donate::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.Donate:hover::before {
+    left: 100%;
+}
+.Donate:hover {
+    background: #d44a06;
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 12px 35px rgba(244, 86, 7, 0.5);
 }
 
 .Read{
     background: transparent;
-    border-color: #f45607;
-    margin-left: 50px;
-    gap: 30px;
+    border: 2px solid #f45607;
+    box-shadow: 0 4px 15px rgba(244, 86, 7, 0.2);
+    position: relative;
+    overflow: hidden;
 }
+.Read::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(244, 86, 7, 0.1), transparent);
+    transition: left 0.5s ease;
+}
+
+.Read:hover::before {
+    left: 100%;
+}
+.Read:hover {
+    background: #f45607;
+    color: white;
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 12px 35px rgba(244, 86, 7, 0.4);
+    border-color: #f45607;
+}
+
+
+.Donate:active {
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 8px 25px rgba(244, 86, 7, 0.6);
+}
+
+.Read:active {
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 8px 25px rgba(244, 86, 7, 0.5);
+}
+
 
 /* Header Branding */
 .header-branding {
@@ -232,16 +347,26 @@ header {
     font-size: 48px;
     font-weight: 700;
     margin-left: 80px;
-    margin-top: 110px;
+    margin-top: 0;
+    margin-bottom: 20px;
+    animation: fadeInUp 1.5s ease-out 0.3s both;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
 }
 
 
 p{
     padding:20px;
     margin-left: 80px;
-    margin-top: 50px;
+    margin-top: 20px;
     font-size: 18px;
     line-height: 1.7;
+}
+
+.grid-content p {
+    animation: fadeInUp 1.5s ease-out 0.6s both;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
+    margin-top: 20px;
+    margin-bottom: 30px;
 }
 
 
@@ -280,14 +405,34 @@ p{
     text-align: center;
     width: 300px;
     height: 400px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: all 0.4s ease;
     cursor: pointer;
+    animation: floatIn 1s ease-out;
+    position: relative;
+    overflow: hidden;
+}
+
+.icon-box::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent, rgba(244, 86, 7, 0.1), transparent);
+    transform: rotate(45deg);
+    transition: all 0.6s ease;
+    opacity: 0;
+}
+
+.icon-box:hover::before {
+    animation: shimmer 0.8s ease-in-out;
 }
 
 .icon-box:hover {
-    transform: translateY(-5px); 
-    background-color: #f45607; 
-    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    transform: translateY(-10px) scale(1.02);
+    background-color: #f45607;
+    box-shadow: 0 15px 30px rgba(244, 86, 7, 0.3);
 }
 
 
@@ -316,12 +461,17 @@ p{
 
 .icon-box:hover {
     background-color: #f45607;
-    transform: translateY(-10px);
+    transform: translateY(-10px) scale(1.02);
 }
 
 .icon-box:hover .icon-wrapper {
-    border-color: #fff;     /* Ring turns white on hover */
-    transform: scale(1.1);  /* Circle grows slightly on hover */
+    border-color: #fff;
+    transform: scale(1.15) rotate(5deg);
+    box-shadow: 0 8px 20px rgba(255,255,255,0.2);
+}
+
+.icon-box:hover .icon-wrapper img {
+    transform: scale(1.1) rotate(-5deg);
 }
 
  
@@ -713,6 +863,122 @@ p{
 
 
 /* ============================
+   PROFESSIONAL ANIMATIONS
+   ============================ */
+
+@keyframes slideInFromLeft {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    0% {
+        transform: translateY(30px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes floatIn {
+    0% {
+        transform: translateY(50px) scale(0.8);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes shimmer {
+    0% {
+        transform: translateX(-100%) translateY(-100%) rotate(45deg);
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(100%) translateY(100%) rotate(45deg);
+        opacity: 0;
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+/* Staggered animation delays for icon boxes */
+.icon-box:nth-child(1) {
+    animation-delay: 0.2s;
+}
+
+.icon-box:nth-child(2) {
+    animation-delay: 0.4s;
+}
+
+.icon-box:nth-child(3) {
+    animation-delay: 0.6s;
+}
+
+/* Smooth scroll behavior */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Enhanced slider transitions */
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: all 1.5s ease-in-out;
+    transform: scale(1.1);
+}
+
+.slide.active {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* Welcome section animations */
+.welcome {
+    animation: fadeInUp 1s ease-out;
+}
+
+.aboutlines {
+    animation: fadeInUp 1s ease-out;
+}
+
+/* Hover effects for navigation */
+nav a {
+    position: relative;
+    overflow: hidden;
+}
+
+
+
+
+
+
+/* ============================
    RESPONSIVE MEDIA QUERIES
    ============================ */
 
@@ -781,21 +1047,43 @@ p{
         margin-left: 0;
         margin-top: 40px;
         text-align: center;
+        animation-delay: 0.1s;
     }
 
-    p {
+    .grid-content p {
         font-size: 16px;
         margin-left: 0;
         margin-top: 20px;
         padding: 10px;
         text-align: center;
+        animation-delay: 0.3s;
+    }
+
+    .button-container {
+        margin-left: 0;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 15px;
     }
 
     .Donate,
     .Read {
-        margin-left: 0;
-        display: inline-block;
-        margin-top: 10px;
+        animation-delay: 0.5s;
+        font-size: 14px;
+        padding: 15px 25px;
+    }
+
+    /* Disable complex animations on mobile for performance */
+    .icon-box::before {
+        display: none;
+    }
+    
+    .icon-box:hover .icon-wrapper {
+        transform: scale(1.1);
+    }
+    
+    .icon-box:hover .icon-wrapper img {
+        transform: scale(1.05);
     }
 
     /* Welcome Section */
@@ -843,6 +1131,11 @@ p{
         flex-direction: column;
         align-items: center;
     }
+    
+    .icon-box {
+        width: 90%;
+        max-width: 350px;
+    }
 
     /* Footer */
     .footerclass {
@@ -885,6 +1178,19 @@ p{
     .footernews {
         font-size: 14px;
     }
+}
+
+@keyframes buttonPulse {
+    0%, 100% {
+        box-shadow: 0 6px 20px rgba(244, 86, 7, 0.4);
+    }
+    50% {
+        box-shadow: 0 8px 25px rgba(244, 86, 7, 0.6);
+    }
+}
+
+.Donate {
+    animation: buttonPulse 3s infinite;
 }
 
 
